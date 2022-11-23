@@ -1,0 +1,258 @@
+@import '../vars';
+@import '../mixins';
+
+// animation arrow-down
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+// animation map
+@keyframes appearPoint {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes animatedLine {
+	// from {
+	// 	stroke-dashoffset: 0;
+	// 	stroke-dasharray: 0;
+	// }
+	to {
+		stroke-dashoffset: 0;
+		// stroke-dasharray: 00;
+	}
+}
+
+// map
+.header__map {
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	top: 0;
+	.map_first-point {
+		animation: appearPoint 0s 1s backwards;
+	}
+	.map_second-point {
+		animation: appearPoint 0s 2s backwards;
+	}
+	.map_third-point {
+		animation: appearPoint 0s 3s backwards;
+	}
+	.map_fourth-point {
+		animation: appearPoint 0s 4s backwards;
+	}
+	.map_fifth-point {
+		animation: appearPoint 0s 5s backwards;
+	}
+	.map_animated-line {
+		stroke-dashoffset: 600;
+		stroke-dasharray: 600;
+		animation: animatedLine 3s 6s forwards;
+	}
+}
+
+// arrows down
+.header__arrows-down {
+	z-index: 1;
+	position: absolute;
+	bottom: 30px;
+	left: 210px;
+	animation: fadeInDown 2s infinite 1s linear;
+}
+
+// title
+.header__title {
+	position: absolute;
+	max-width: 467px;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	font-weight: 800;
+	// font-size: min(12vw, 200px);
+	font-size: 200px;
+	opacity: 0.07;
+	line-height: 156px;
+}
+
+// aside
+.header__aside {
+	// width: relItemWidth(168, 1440);
+	max-width: 168px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	border-right: 1px solid rgba($white, 0.25);
+	height: 100vh;
+	text-align: center;
+	&__search {
+		margin-bottom: 5px;
+		cursor: pointer;
+	}
+	&__date-number {
+		font-weight: 800;
+		// font-size: min(5.5vw, 72px);
+		font-size: 72px;
+		margin-bottom: 16px;
+	}
+	&__date-month {
+		display: block;
+		font-weight: 300;
+		// font-size: min(2vw, 16px);
+		font-size: 16px;
+		letter-spacing: 1.4px;
+		margin-bottom: 10px;
+	}
+	&__location {
+		display: block;
+		font-weight: 300;
+		font-size: 12px;
+		letter-spacing: 1.05px;
+		margin-bottom: 5px;
+		text-transform: capitalize;
+		&::before {
+			content: url('../img/map-marker.svg');
+			margin-right: 8px;
+		}
+	}
+}
+
+// aside menu
+.menu {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	&__list-item {
+		@include mb(22px);
+		a {
+			display: block;
+			span {
+				display: block;
+				font-weight: 500;
+				font-size: 12px;
+				// font-size: min(2.2vw, 12px);
+				letter-spacing: 3px;
+				padding-top: 6px;
+				text-transform: capitalize;
+			}
+		}
+	}
+}
+
+// nav img
+// .nav_img-surf {
+// 	width: relItemWidth(59, 168);
+// }
+
+// .nav_img-travel {
+// 	width: relItemWidth(50, 168);
+// }
+
+// .nav_img-sleep {
+// 	width: relItemWidth(39, 168);
+// }
+
+// .nav_img-shop {
+// 	width: relItemWidth(16, 168);
+// }
+
+// slider
+.slider {
+	position: relative;
+	&-wrapper {
+		display: flex;
+	}
+	&-item {
+		flex-shrink: 0;
+		height: 100vh;
+		@include image-set('../img/header-bg');
+		@include bg-psr;
+		position: relative;
+	}
+}
+
+// slider content
+.slider-item__info {
+	text-align: right;
+	position: absolute;
+	right: 80px;
+	bottom: 115px;
+}
+
+.slider-item__info-title {
+	font-weight: 800;
+	font-size: 80px;
+	line-height: 86px;
+	text-align: right;
+	margin-bottom: 48px;
+}
+
+.slider-item__info-subtitle {
+	margin-bottom: 5px;
+}
+
+.slider-item__info-text {
+	font-weight: 800;
+	font-size: 40px;
+	line-height: 46px;
+	margin-bottom: 20px;
+}
+
+// slider arrows
+.slider-arrows {
+	z-index: 3;
+	position: absolute;
+	top: 40px;
+	right: 80px;
+	cursor: pointer;
+	&__left {
+		right: 125px;
+	}
+}
+
+// pagination
+.slider-pagination {
+	position: absolute;
+	right: 80px;
+	height: 44px;
+	display: flex;
+	justify-content: space-between;
+	min-width: 920px;
+	width: 920px;
+	bottom: 36px;
+	&-box {
+		display: flex;
+		justify-content: space-between;
+		cursor: pointer;
+		text-transform: capitalize;
+		width: 200px;
+		height: 28px;
+		align-items: center;
+		border-top: 4px solid $white;
+		padding-top: 6px;
+		&__number {
+			font-weight: 800;
+			font-size: 24px;
+			line-height: 34px;
+		}
+		&__name {
+			font-weight: 300;
+			line-height: 19px;
+		}
+		&__active {
+			border-top: 4px solid $green;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+
+@import './components/header';
+@import './components/sectionSurf.scss';
+
+@import 'media';
