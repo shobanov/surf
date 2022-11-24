@@ -1,38 +1,50 @@
 import Swiper from 'swiper/bundle';
 
-const swiper = new Swiper('.slider', {
-	slideClass: 'slider-item',
-	wrapperClass: 'slider-wrapper',
+// header slider
+const headerSlider = new Swiper('.header__slider', {
+	wrapperClass: 'header__slider-wrapper',
+	slideClass: 'header__slider-item',
 	fadeEffect: {
 		crossFade: true,
 	},
 	loop: true,
 	effect: 'fade',
 	navigation: {
-		nextEl: '.slider-arrows__right',
-		prevEl: '.slider-arrows__left',
+		nextEl: '.header__slider-arrows_right',
+		prevEl: '.header__slider-arrows_left',
 	},
 	pagination: {
-		el: '.slider-pagination',
+		el: '.header__slider-pagination',
 		lockClass: 'swiper-pagination-custom',
 		clickable: true,
-		bulletClass: 'slider-pagination-box',
+		bulletClass: 'header__slider-pagination-box',
 		type: 'custom',
 	},
 	on: {
 		init: function () {
 			document
-				.querySelector('.slider-pagination-box')
-				.classList.add('slider-pagination-box__active');
+				.querySelector('.header__slider-pagination-box')
+				.classList.add('header__slider-pagination-box_active');
 		},
 	},
 });
 
-swiper.on('slideChange', function () {
+headerSlider.on('slideChange', function () {
 	document
-		.querySelector('.slider-pagination-box__active')
-		.classList.remove('slider-pagination-box__active');
+		.querySelector('.header__slider-pagination-box_active')
+		.classList.remove('header__slider-pagination-box_active');
 	document
-		.querySelector('.slider-pagination')
-		.children[swiper.realIndex].classList.add('slider-pagination-box__active');
+		.querySelector('.header__slider-pagination')
+		.children[headerSlider.realIndex].classList.add(
+			'header__slider-pagination-box_active'
+		);
+});
+
+// surf slider
+const surfSlider = new Swiper('.surf__slider', {
+	wrapperClass: 'surf__slider-wrapper',
+	slideClass: 'surf__slide',
+	slidesPerView: 4,
+	spaceBetween: 10,
+	loop: true,
 });

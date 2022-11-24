@@ -1,10 +1,49 @@
+@import '../vars';
+@import '../mixins';
+
 .surf {
 	padding: 160px 0 210px;
-	height: 100vh;
+	position: relative;
+	&::after {
+		content: url('../../img/surf-marker-bg.svg');
+		position: absolute;
+		top: 219px;
+		right: 0px;
+	}
 }
 
 .surf__subtitle {
-	text-align: right;
 	padding-right: 80px;
-	margin-top: -80px;
+	margin-top: -50px;
+}
+
+// slider
+.surf__slider {
+	overflow: hidden;
+}
+.surf__slider-wrapper {
+	display: flex;
+}
+
+.surf__slide {
+	min-height: 750px;
+	width: 300px;
+	flex-shrink: 0;
+}
+
+// slides
+.first_slide {
+	@include bg-img-set('../../img/slide-1');
+}
+
+.second_slide {
+	@include bg-img-set('../../img/slide-2');
+}
+
+.third_slide {
+	@include bg-img-set('../../img/slide-3');
+}
+
+.fourth_slide {
+	@include bg-img-set('../../img/slide-4');
 }

@@ -1,6 +1,7 @@
+/.vscode
 /node_modules
 /app
-package-lock.json
 gulpfile.js
-vscode
+package-lock.json
+yarn.lock
 README.md

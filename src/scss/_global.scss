@@ -24,12 +24,29 @@ body {
 	text-transform: uppercase;
 }
 
+img {
+	height: auto;
+	max-width: 100%;
+	object-fit: cover;
+}
+
+a {
+	text-decoration: none;
+	color: $white;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .container {
 	max-width: 1920px;
 	margin: 0 auto;
 }
 
-.headline-left {
+.subtitle_transparent {
 	font-size: 22px;
 	line-height: 32px;
 	letter-spacing: 7.33333px;
@@ -49,33 +66,16 @@ body {
 }
 
 .subtitle {
-	display: inline-block;
 	text-align: right;
-	&__head {
+	&_bold {
 		font-weight: 800;
 		font-size: 40px;
 		padding-right: 10px;
+		margin-top: 20px;
 		span {
 			font-weight: 100;
 		}
 	}
-}
-
-img {
-	height: auto;
-	max-width: 100%;
-	object-fit: cover;
-}
-
-a {
-	text-decoration: none;
-	color: $white;
-}
-
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 .title {

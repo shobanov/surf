@@ -9,13 +9,6 @@
 	@return calc($item-width / $container-width) * 100%;
 }
 
-// background
-@mixin bg-psr {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
 // flex
 @mixin flex-v-center {
 	display: flex;
@@ -39,8 +32,15 @@
 	justify-content: space-between;
 }
 
+// background
+@mixin bg-standard-rul {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 // img set
-@mixin image-set($pathToImage) {
+@mixin bg-img-set($pathToImage) {
 	background-image: url('#{$pathToImage}.jpg');
 	background-image: image-set(
 		'#{$pathToImage}.avif'type('image/avif'),

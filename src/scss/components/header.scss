@@ -26,13 +26,8 @@
 }
 
 @keyframes animatedLine {
-	// from {
-	// 	stroke-dashoffset: 0;
-	// 	stroke-dasharray: 0;
-	// }
 	to {
 		stroke-dashoffset: 0;
-		// stroke-dasharray: 00;
 	}
 }
 
@@ -65,7 +60,7 @@
 }
 
 // arrows down
-.header__arrows-down {
+.header__arrows_down {
 	z-index: 1;
 	position: absolute;
 	bottom: 30px;
@@ -98,17 +93,20 @@
 	border-right: 1px solid rgba($white, 0.25);
 	height: 100vh;
 	text-align: center;
+}
+
+.header {
 	&__search {
 		margin-bottom: 5px;
 		cursor: pointer;
 	}
-	&__date-number {
+	&__date_day {
 		font-weight: 800;
 		// font-size: min(5.5vw, 72px);
 		font-size: 72px;
 		margin-bottom: 16px;
 	}
-	&__date-month {
+	&__date {
 		display: block;
 		font-weight: 300;
 		// font-size: min(2vw, 16px);
@@ -169,29 +167,26 @@
 // }
 
 // slider
-.slider {
-	position: relative;
-	&-wrapper {
-		display: flex;
-	}
-	&-item {
-		flex-shrink: 0;
-		height: 100vh;
-		@include image-set('../img/header-bg');
-		@include bg-psr;
-		position: relative;
-	}
+.header__slider-wrapper {
+	display: flex;
+}
+
+.header__slider-item {
+	flex-shrink: 0;
+	height: 100vh;
+	@include bg-img-set('../img/header-bg');
+	@include bg-standard-rul;
 }
 
 // slider content
-.slider-item__info {
+.header__slide-info {
 	text-align: right;
 	position: absolute;
 	right: 80px;
 	bottom: 115px;
 }
 
-.slider-item__info-title {
+.header__slide-title {
 	font-weight: 800;
 	font-size: 80px;
 	line-height: 86px;
@@ -199,11 +194,11 @@
 	margin-bottom: 48px;
 }
 
-.slider-item__info-subtitle {
+.header__slide-subtitle {
 	margin-bottom: 5px;
 }
 
-.slider-item__info-text {
+.header__slide-text {
 	font-weight: 800;
 	font-size: 40px;
 	line-height: 46px;
@@ -211,19 +206,19 @@
 }
 
 // slider arrows
-.slider-arrows {
+.header__slider-arrows {
 	z-index: 3;
 	position: absolute;
 	top: 40px;
 	right: 80px;
 	cursor: pointer;
-	&__left {
+	&_left {
 		right: 125px;
 	}
 }
 
 // pagination
-.slider-pagination {
+.header__slider-pagination {
 	position: absolute;
 	right: 80px;
 	height: 44px;
@@ -242,16 +237,16 @@
 		align-items: center;
 		border-top: 4px solid $white;
 		padding-top: 6px;
-		&__number {
+		&_number {
 			font-weight: 800;
 			font-size: 24px;
 			line-height: 34px;
 		}
-		&__name {
+		&_name {
 			font-weight: 300;
 			line-height: 19px;
 		}
-		&__active {
+		&_active {
 			border-top: 4px solid $green;
 		}
 	}

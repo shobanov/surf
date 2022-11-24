@@ -3,7 +3,7 @@
 	<div class="header__map">
 		@include('../htmlParts/stylableHeaderSvg.html')
 	</div>
-	<div class="header__arrows-down">
+	<div class="header__arrows_down">
 		<a href="#">
 			<img
 				loading="lazy"
@@ -14,7 +14,7 @@
 	</div>
 	<!-- header menu -->
 	<div class="header__aside">
-		<div class="header__aside-logo">
+		<div class="header__logo">
 			<a href="#">
 				<img loading="lazy" src="img/logo.svg" alt="logo go-surf" />
 			</a>
@@ -68,29 +68,29 @@
 				</li>
 			</ul>
 		</nav>
-		<div class="header__aside__search">
+		<div class="header__search">
 			<img loading="lazy" src="img/search.svg" alt="search" />
 		</div>
-		<div class="header__aside__date">
-			<span class="header__aside__date-number">20</span>
+		<div class="header__date">
+			<span class="header__date_day">20</span>
 			<br />
-			<span class="header__aside__date-month"> 06 | 2023 </span>
+			<span class="header__date">06 | 2023</span>
 		</div>
-		<div class="header__aside__location">california</div>
+		<div class="header__location">california</div>
 	</div>
 	<!-- slider -->
-	<div class="slider">
-		<div class="slider-wrapper">
+	<div class="header__slider">
+		<div class="header__slider-wrapper">
 			<!-- slider-item №1 -->
-			<div class="slider-item">
-				<div class="slider-item__info">
-					<div class="slider-item__info-subtitle headline-left">
+			<div class="header__slider-item">
+				<div class="header__slide-info">
+					<div class="header__slide-subtitle subtitle_transparent">
 						surf
 					</div>
-					<div class="slider-item__info-title">north shore</div>
-					<div class="headline-left">condition</div>
-					<div class="slider-item__info-text">radical</div>
-					<a href="#" class="slider-item__info-link">
+					<div class="header__slide-title">north shore</div>
+					<div class="subtitle_transparent">condition</div>
+					<div class="header__slide-text">radical</div>
+					<a href="#" class="header__slide-link">
 						<img
 							loading="lazy"
 							src="img/arrow-right.svg"
@@ -100,15 +100,15 @@
 				</div>
 			</div>
 			<!-- slider-item №2 -->
-			<div class="slider-item">
-				<div class="slider-item__info">
-					<div class="slider-item__info-subtitle headline-left">
+			<div class="header__slider-item">
+				<div class="header__slide-info">
+					<div class="header__slide-subtitle subtitle_transparent">
 						surf
 					</div>
-					<div class="slider-item__info-title">south shore</div>
-					<div class="headline-left">condition</div>
-					<div class="slider-item__info-text">radical</div>
-					<a href="#" class="slider-item__info-link">
+					<div class="header__slide-title">south shore</div>
+					<div class="subtitle_transparent">condition</div>
+					<div class="header__slide-text">radical</div>
+					<a href="#" class="header__slide-link">
 						<img
 							loading="lazy"
 							src="img/arrow-right.svg"
@@ -118,15 +118,15 @@
 				</div>
 			</div>
 			<!-- slider-item №3 -->
-			<div class="slider-item">
-				<div class="slider-item__info">
-					<div class="slider-item__info-subtitle headline-left">
+			<div class="header__slider-item">
+				<div class="header__slide-info">
+					<div class="header__slide-subtitle subtitle_transparent">
 						surf
 					</div>
-					<div class="slider-item__info-title">west shore</div>
-					<div class="headline-left">condition</div>
-					<div class="slider-item__info-text">radical</div>
-					<a href="#" class="slider-item__info-link">
+					<div class="header__slide-title">west shore</div>
+					<div class="subtitle_transparent">condition</div>
+					<div class="header__slide-text">radical</div>
+					<a href="#" class="header__slide-link">
 						<img
 							loading="lazy"
 							src="img/arrow-right.svg"
@@ -136,15 +136,15 @@
 				</div>
 			</div>
 			<!-- slider-item №4 -->
-			<div class="slider-item">
-				<div class="slider-item__info">
-					<div class="headline-left">surf</div>
-					<div class="slider-item__info-title">east shore</div>
-					<div class="slider-item__info-subtext headline-left">
-						condition
+			<div class="header__slider-item">
+				<div class="header__slide-info">
+					<div class="header__slide-subtitle subtitle_transparent">
+						surf
 					</div>
-					<div class="slider-item__info-text">radical</div>
-					<a href="#" class="slider-item__info-link">
+					<div class="header__slide-title">east shore</div>
+					<div class="subtitle_transparent">condition</div>
+					<div class="header__slide-text">radical</div>
+					<a href="#" class="header__slide-link">
 						<img
 							loading="lazy"
 							src="img/arrow-right.svg"
@@ -155,7 +155,7 @@
 			</div>
 		</div>
 		<!-- button next -->
-		<div class="slider-arrows__right slider-arrows">
+		<div class="header__slider-arrows_right header__slider-arrows">
 			<img
 				loading="lazy"
 				src="../img/arrow-right.svg"
@@ -163,7 +163,7 @@
 			/>
 		</div>
 		<!-- button prev -->
-		<div class="slider-arrows__left slider-arrows">
+		<div class="header__slider-arrows_left header__slider-arrows">
 			<img
 				loading="lazy"
 				src="../img/arrow-left.svg"
@@ -171,22 +171,30 @@
 			/>
 		</div>
 		<!-- pagination -->
-		<div class="slider-pagination">
-			<div class="slider-pagination-box">
-				<div class="slider-pagination-box__number">01</div>
-				<div class="slider-pagination-box__name">north shore</div>
+		<div class="header__slider-pagination">
+			<div class="header__slider-pagination-box">
+				<div class="header__slider-pagination-box_number">01</div>
+				<div class="header__slider-pagination-box_name">
+					north shore
+				</div>
 			</div>
-			<div class="slider-pagination-box">
-				<div class="slider-pagination-box__number">02</div>
-				<div class="slider-pagination-box__name">south shore</div>
+			<div class="header__slider-pagination-box">
+				<div class="header__slider-pagination-box_number">02</div>
+				<div class="header__slider-pagination-box_name">
+					south shore
+				</div>
 			</div>
-			<div class="slider-pagination-box">
-				<div class="slider-pagination-box__number">03</div>
-				<div class="slider-pagination-box__name">west shore</div>
+			<div class="header__slider-pagination-box">
+				<div class="header__slider-pagination-box_number">03</div>
+				<div class="header__slider-pagination-box_name">
+					west shore
+				</div>
 			</div>
-			<div class="slider-pagination-box">
-				<div class="slider-pagination-box__number">04</div>
-				<div class="slider-pagination-box__name">east shore</div>
+			<div class="header__slider-pagination-box">
+				<div class="header__slider-pagination-box_number">04</div>
+				<div class="header__slider-pagination-box_name">
+					east shore
+				</div>
 			</div>
 		</div>
 	</div>
