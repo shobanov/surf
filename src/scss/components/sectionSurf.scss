@@ -2,8 +2,8 @@
 @import '../mixins';
 
 .surf {
-	padding: 160px 0 210px;
 	position: relative;
+	padding: 160px 0 120px;
 	&::after {
 		content: url('../../img/surf-marker-bg.svg');
 		position: absolute;
@@ -18,32 +18,256 @@
 }
 
 // slider
-.surf__slider {
+.surf-slider {
 	overflow: hidden;
+	position: relative;
+	padding: 100px 0 100px;
 }
-.surf__slider-wrapper {
+.surf-slider__wrapper {
 	display: flex;
 }
 
-.surf__slide {
+.surf__slide-box {
 	min-height: 750px;
-	width: 300px;
 	flex-shrink: 0;
+	@include bg-standard-rul;
+	&:nth-child(4n + 1) {
+		margin-top: 32px;
+		margin-bottom: -32px;
+	}
+	&:nth-child(4n + 3) {
+		margin-top: 89px;
+		margin-bottom: -89px;
+	}
+	&_inner {
+		background: rgba(#1c2121, 0.85);
+		height: 100%;
+		position: relative;
+		transition: all 0.5s;
+		&:hover {
+			background: rgba(#1c2121, 0.3);
+			.surf__slide-btn {
+				display: block;
+			}
+		}
+	}
+}
+
+.surf__slide-title {
+	font-weight: 800;
+	font-size: 40px;
+	line-height: 36px;
+	width: 140px;
+	padding: 72px 0 0 40px;
+}
+
+.surf__slide-location {
+	position: absolute;
+	font-size: 18px;
+	letter-spacing: 8px;
+	transform: rotate(-90deg);
+	height: 0;
+	width: 0;
+	left: 40px;
+	bottom: 80px;
+	white-space: nowrap;
+	span {
+		font-weight: 100;
+	}
+}
+
+.surf__slide-btn {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+}
+
+.swiper-slide-active {
+	.surf__slide-btn {
+		display: block;
+	}
+	.surf__slide-box_inner {
+		background: rgba(#1c2121, 0.3);
+	}
+}
+
+// arrows slider
+.surf-slider__arrows {
+	z-index: 1;
+	position: absolute;
+	top: 32px;
+	right: 80px;
+	cursor: pointer;
+	opacity: 0.25;
+	&_left {
+		right: 125px;
+	}
 }
 
 // slides
 .first_slide {
-	@include bg-img-set('../../img/slide-1');
-}
-
-.second_slide {
-	@include bg-img-set('../../img/slide-2');
-}
-
-.third_slide {
 	@include bg-img-set('../../img/slide-3');
 }
 
-.fourth_slide {
+.second_slide {
+	@include bg-img-set('../../img/slide-1');
+}
+
+.third_slide {
 	@include bg-img-set('../../img/slide-4');
+}
+
+.fourth_slide {
+	@include bg-img-set('../../img/slide-2');
+}
+
+// surf slider map / dots pagination
+.slider-map {
+	display: flex;
+	position: relative;
+	max-width: 1200px;
+	min-height: 635px;
+	@include bg-img-set-png('../img/world-map');
+	@include bg-standard-rul;
+	margin: 0 auto;
+	.slider-dots_active {
+		.slider-dots__content {
+			display: block;
+		}
+	}
+}
+
+.slider-dots {
+	position: absolute;
+	display: inline-block;
+	&__circle {
+		cursor: pointer;
+		width: 24px;
+		height: 24px;
+		background-color: $green;
+		border-radius: 50%;
+	}
+	&_1 {
+		top: 330px;
+		left: -15px;
+		.slider-dots__content {
+			transform: translateX(0);
+			&::before {
+				left: 0;
+			}
+		}
+	}
+	&_2 {
+		top: 290px;
+		left: 130px;
+		.slider-dots__circle {
+			&::before {
+				content: '';
+				position: absolute;
+				background-image: url('../../img/map-marker-small.svg');
+				width: 14px;
+				height: 17px;
+				right: -20px;
+				top: -20px;
+			}
+		}
+	}
+	&_3 {
+		top: 320px;
+		left: 345px;
+	}
+	&_4 {
+		top: 500px;
+		left: 410px;
+	}
+	&_5 {
+		top: 210px;
+		left: 530px;
+	}
+	&_6 {
+		top: 555px;
+		left: 640px;
+	}
+	&_7 {
+		top: 390px;
+		left: 800px;
+	}
+	&_8 {
+		top: 505px;
+		left: 1090px;
+	}
+}
+
+.slider-dots__content {
+	display: none;
+	width: 285px;
+	padding: 28px 31px 0 32px;
+	background: rgba(#0f1010, 0.7);
+	border-radius: 15px;
+	position: absolute;
+	bottom: 45px;
+	transform: translateX(-45%);
+	z-index: 1; // !!!!
+	&::before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-bottom: 20px solid $green;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		bottom: -30px;
+		left: 45%;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	&-item {
+		text-align: center;
+		img {
+			margin-bottom: 7px;
+		}
+	}
+	&-number {
+		font-weight: 800;
+		font-size: 16px;
+		line-height: 23px;
+	}
+	&-name {
+		font-weight: 300;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	&-row {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 30px;
+	}
+	&-title {
+		font-weight: 800;
+		font-size: 18px;
+		padding-bottom: 8px;
+		margin-bottom: 8px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $green;
+			width: 80px;
+			height: 1px;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	&-subtitle {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		text-transform: capitalize;
+	}
+	&-link {
+		padding-top: 4px;
+	}
 }

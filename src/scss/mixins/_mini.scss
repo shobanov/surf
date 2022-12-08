@@ -49,6 +49,15 @@
 	);
 }
 
+@mixin bg-img-set-png($pathToImage) {
+	background-image: url('#{$pathToImage}.png');
+	background-image: image-set(
+		'#{$pathToImage}.avif'type('image/avif'),
+		'#{$pathToImage}.webp'type('image/webp'),
+		'#{$pathToImage}.png'type('image/png')
+	);
+}
+
 // footer
 @mixin footerToBottom {
 	display: grid;

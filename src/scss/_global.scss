@@ -24,6 +24,15 @@ body {
 	text-transform: uppercase;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
 img {
 	height: auto;
 	max-width: 100%;
@@ -102,6 +111,38 @@ ul {
 			width: 80px;
 			height: 1px;
 			background-color: $green;
+		}
+	}
+}
+
+.btn {
+	font-weight: 800;
+	font-size: 40px;
+	line-height: 36px;
+	span {
+		padding: 17px 57px 15px 17px;
+		background-color: $green;
+		display: inline-block;
+		margin-left: 19px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $white;
+			width: 20px;
+			height: 1px;
+			top: 50%;
+			left: -10px;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			width: 25px;
+			height: 21px;
+			background-image: url('../img/arrow-right.svg');
+			top: 50%;
+			right: 17px;
+			transform: translateY(-50%);
 		}
 	}
 }

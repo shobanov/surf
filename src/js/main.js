@@ -41,10 +41,41 @@ headerSlider.on('slideChange', function () {
 });
 
 // surf slider
-const surfSlider = new Swiper('.surf__slider', {
-	wrapperClass: 'surf__slider-wrapper',
-	slideClass: 'surf__slide',
+const surfSlider = new Swiper('.surf-slider', {
+	wrapperClass: 'surf-slider__wrapper',
+	slideClass: 'surf__slide-box',
 	slidesPerView: 4,
-	spaceBetween: 10,
+	spaceBetween: 0,
 	loop: true,
+	clickable: true,
+	speed: 500,
+	navigation: {
+		nextEl: '.surf-slider__arrows_right',
+		prevEl: '.surf-slider__arrows_left',
+	},
+	pagination: {
+		el: '.slider-map',
+		bulletClass: 'slider-dots',
+		lockClass: 'swiper-pagination-custom',
+		clickable: true,
+		type: 'custom',
+	},
+	on: {
+		init: function () {
+			document
+				.querySelector('.slider-dots')
+				.classList.add('slider-dots_active');
+		},
+	},
+});
+
+surfSlider.on('slideChange', function () {
+	document
+		.querySelector('.slider-dots_active')
+		.classList.remove('slider-dots_active');
+	document
+		.querySelector('.slider-map')
+		.children[surfSlider.realIndex].classList.add(
+			'slider-dots_active'
+		);
 });
