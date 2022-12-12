@@ -1,0 +1,97 @@
+@import '../mixins';
+
+.travel {
+	@include bg-img-set-png('../../img/cocktail');
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	padding-bottom: 265px;
+}
+
+.travel__subtitle {
+	padding: 132px 80px 0 0;
+}
+
+// arrows slider
+.travel-slider__arrows {
+	z-index: 1;
+	position: absolute;
+	top: 250px;
+	right: 80px;
+	cursor: pointer;
+	opacity: 0.25;
+	&_left {
+		right: 125px;
+	}
+}
+
+.travel__subtitle_left {
+	@include bg-img-set-png('../../img/airplane');
+	padding: 160px 0 0 132px;
+	background-repeat: no-repeat;
+	min-height: 320px;
+	background-position: right center;
+	margin-top: -260px;
+	img {
+		margin: -25px 0 0 25px;
+	}
+}
+
+// slider
+.travel-slider {
+	overflow: hidden;
+	&__wrapper {
+		display: flex;
+	}
+	&__item {
+		flex-shrink: 0;
+	}
+	&__head {
+		position: relative;
+		@include bg-img-set-png('../../img/travel-bg');
+		background-position: top left;
+		background-repeat: no-repeat;
+		min-height: 780px;
+	}
+	&__info {
+		display: flex;
+		justify-content: space-around;
+	}
+	&__info-item {
+		position: relative;
+		min-height: 200px;
+		margin-bottom: 66px;
+	}
+	&__info-subtitle {
+		position: absolute;
+		font-size: 18px;
+		text-align: right;
+		letter-spacing: 8px;
+		transform: rotate(-90deg);
+		white-space: nowrap;
+		opacity: 0.5;
+		width: 200px;
+		height: 0;
+		top: 95px;
+		left: -100px;
+		text-align: right;
+	}
+	&__info-title {
+		font-weight: 800;
+		font-size: 40px;
+		line-height: 36px;
+		padding-left: 40px;
+		position: relative;
+		span {
+			position: absolute;
+			top: 30px;
+			right: 0;
+			font-weight: 400;
+			font-size: 14px;
+			opacity: 0.75;
+			letter-spacing: 5.25px;
+		}
+	}
+	&__btn {
+		text-align: center;
+	}
+}

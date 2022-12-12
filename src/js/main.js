@@ -79,3 +79,18 @@ surfSlider.on('slideChange', function () {
 			'slider-dots_active'
 		);
 });
+
+// travel slider
+const travelSlider = new Swiper('.travel-slider', {
+	wrapperClass: 'travel-slider__wrapper',
+	slideClass: 'travel-slider__item',
+	loop: true,
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true,
+	},
+	navigation: {
+		nextEl: '.travel-slider__arrows_right',
+		prevEl: '.travel-slider__arrows_left',
+	},
+});
